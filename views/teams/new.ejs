@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+  <form action="/teams" method="POST">
+      <label>Team:
+        <input type="text" name="airline">
+      </label><br>
+      <label>Flight No.
+        <input type="text" name="flightNo">
+      </label><br>
+      <label>Departure Date/Time
+      <input type="datetime-local" name="departs">
+    </label><br>
+    <label>Pick Your Team</label>
+    <select name="team">
+        <option value="SEA">SEA</option>
+        <option value="DAL">DAL</option>
+        <option value="LAX">LAX</option>
+        <option value="ATX">ATX</option>
+    </select>
+      <input type="submit" value="Add Flight">
+  </form>
+  <%- include('../partials/footer') %>

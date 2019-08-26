@@ -17,6 +17,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var playersRouter = require('./routes/players');
+var usersRouter = require('./routes/users');
 
 
 // view engine setup
