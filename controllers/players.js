@@ -1,29 +1,29 @@
-const Team = require('../models/player')
+const Player = require('../models/player')
 
 module.exports = {
     index,
-    new: newTeam,
+    new: newPlayer,
     show,
     create
 }
 
 function index(req, res){
-    res.render('teams/index')
+    res.render('players/index')
 }
 
-function newTeam(req, res){
-    res.render('teams/new', {title: 'Add Team'});
+function newPlayer(req, res){
+    res.render('players/new', {title: 'Add Player', user: req.user});
 }
 
 function show(req, res){
-    Team.findById(req.params.id, function(err, team){
-        res.render('team/:id')
+    Player.findById(req.params.id, function(err, player){
+        res.render('player/:id')
     })
 }
 
 function create(req, res){
-    var team = new Team(req.body);
-    team.save(function(err){
-        res.redirect('/teams')
+    var player = new Player(req.body);
+    player.save(function(err){
+        res.redirect('/player/index')
     })
 }

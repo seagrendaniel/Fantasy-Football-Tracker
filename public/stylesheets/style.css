@@ -7,4 +7,16 @@ a {
   color: #00B7FF;
 }
 
+select {
+  display: flex;
+}
 
+football-header {
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+}
+
+.nav-wrapper {
+  width: 100%;
+}

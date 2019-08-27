@@ -1,49 +1,32 @@
 <%- include('../partials/header') %>
-  <form action="/flights" method="POST">
-      <label>Airline:
-        <input type="text" name="airline">
-      </label><br>
-      <label>Flight No.
-        <input type="text" name="flightNo">
-      </label><br>
-      <label>Departure Date/Time
-      <input type="datetime-local" name="departs">
-    </label><br>
-    <label>Pick Your Team</label>
-    <select name="team">
-        <option value="ARI">Arizona Cardinals</option>
-        <option value="ATL">Atlanta Falcons</option>
-        <option value="BAL">Baltimore Ravens</option>
-        <option value="BUF">Buffalo Bills</option>
-        <option value="CAR">Carolina Panthers</option>
-        <option value="CHI">Chicago Bears</option>
-        <option value="CIN">Cincinnati Bengals</option>
-        <option value="CLE">Cleveland Browns</option>
-        <option value="DAL">Dallas Cowboys</option>
-        <option value="DEN">Denver Broncos</option>
-        <option value="DET">Detroit Lions</option>
-        <option value="GB">Green Bay Packers</option>
-        <option value="HOU">Houston Texans</option>
-        <option value="IND">Indianapolis Colts</option>
-        <option value="JAX">Jacksonville Jaguars</option>
-        <option value="KC">Kansas City Chiefs</option>
-        <option value="LAC">Los Angeles Chargers</option>
-        <option value="LAR">Los Angeles Rams</option>
-        <option value="MIA">Miami Dolphins</option>
-        <option value="MIN">Minnesota Vikings</option>
-        <option value="NE">New England Patriots</option>
-        <option value="NO">New Orleans Saints</option>
-        <option value="NYG">New York Giants</option>
-        <option value="NYJ">New York Jets</option>
-        <option value="OAK">Oakland Raiders</option>
-        <option value="PHI">Philadelphia Eagles</option>
-        <option value="PIT">Pittsburg Steelers</option>
-        <option value="SF">San Francisco 49ers</option>
-        <option value="SEA">Seattle Seahawks</option>
-        <option value="TB">Tampa Bay Buccaneers</option>
-        <option value="TEN">Tennessee Titans</option>
-        <option value="WAS">Washington Redskins</option>
-    </select>
-      <input type="submit" value="Add Flight">
+<div>
+    <h3>Pick Your Team</h3>
+  </div>
+  <table class="striped">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Bye Week</th>
+          <th>More Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% teams.forEach(function(m) { %>
+          <tr>
+            <td><%= m.name %></td>
+            <td><%= m.byeWeek %></td>
+            <td><a href="/teams/<%=m._id %>">DETAILS</a></td>
+            <td><form action="/teams/<%=m._id%>?_method=DELETE" method="POST"><button>X</button></form></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <!-- <input type="submit" value="Select Team"> -->
+  <form action="/teams/new">
+  <input type="submit" value="Add Team">
   </form>
-  <%- include('../partials/footer') %>
+
+
+
+
+<%- include('../partials/footer') %> 

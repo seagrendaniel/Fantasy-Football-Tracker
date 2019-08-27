@@ -5,25 +5,35 @@ var PlayerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    team: {
+        type: String,
+        required: true
+    },
     position: {
         type: String,
         required: true
+    },
+    rushYdsPG: {
+        type: Number,
+    },
+    rushAttPG: {
+        type: Number,
+    },
+    rushTD: {
+        type: Number,
+    },
+    recYdsPG: {
+        type: Number,
+    },
+    recTargets: {
+        type: Number,
+    },
+    recTD: {
+        type: Number,
+    },
+    adp: {
+        type: Number,
     }
 })
 
-var TeamSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    byeWeek: {
-        type: Number,
-        min: 4,
-        max: 12,
-        required: true
-    },
-    players: [PlayerSchema],
-
-})
-
-module.exports = mongoose.model('Team', TeamSchema);
+module.exports = mongoose.model('Player', PlayerSchema);

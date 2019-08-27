@@ -1,0 +1,53 @@
+<%- include('../partials/header') %>
+<div class="container">
+    <form action="/" method="POST">
+        <div class="col l6">
+            <label>Name:
+                <input type="text" name="name">
+            </label><br>
+            <select class="browser-default" name="position">Position:
+                <option value="RB">RB</option>
+                <option value="WR">WR</option>
+                <option value="TE">TE</option>
+            </select><br>
+            <label>Team:
+                <input type="text" name="team">
+            </label><br>
+        </div>
+        <div class="col l6">
+            <label>Rush Yds/Game:
+                <input type="text" name="rushYdsPG">
+            </label><br>
+            <label>Rush Attempts/Game:
+                <input type="text" name="rushAttPG">
+            </label><br>
+            <label>Rushing TDs/Game:
+                <input type="text" name="rushTD">
+            </label><br>
+            <label>Reception Yards/Game:
+                <input type="text" name="recYdsPG">
+            </label><br>
+            <label>Targets/Game:
+                <input type="text" name="recTargets">
+            </label><br>
+            <label>Reception TDs/Game:
+                <input type="text" name="recTD">
+            </label><br>
+            <label>Average Draft Position:
+                <input type="text" name="recTargets">
+            </label><br>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <input type="submit" value="Add Player">
+    </form>
+</div>
+<%- include('../partials/footer') %>

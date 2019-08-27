@@ -11,6 +11,7 @@ passport.use(new GoogleStrategy(
     },
     function(accessToken, refreshToken, profile, cb){
         // A user has logged in with OAuth
+        console.log(profile.id)
         User.findOne({'googleId': profile.id}, function(err, user){
             if(err) return cb(err);
             if(user){
@@ -24,8 +25,11 @@ passport.use(new GoogleStrategy(
                     email: profile.emails[0].value,
                     googleId: profile.id
                 });
+                console.log(newUser)
                 newUser.save(function(err){
+                    console.log(err);
                     if(err) return cb(err);
+                    console.log('hitting again')
                     return cb(null, newUser);
                 });
             }

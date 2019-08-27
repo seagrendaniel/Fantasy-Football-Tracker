@@ -7,9 +7,11 @@
 <div><%= team.byeWeek%></div>
 
 <div>Players: </div>
-<div><%= team.players</div>
+<div><%= team.players%></div>
 
 
-
+<form action="/players/new">
+    <input type="submit" value="Add Player">
+</form>
 
 <%- include('../partials/footer') %>
