@@ -22,3 +22,8 @@ football-header {
 .nav-wrapper {
   width: 100%;
 }
+
+.players {
+  font-size: 50px;
+  background-color: blueviolet;
+}

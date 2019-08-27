@@ -14,9 +14,9 @@ function index(req, res) {
 }
 
 function newPlayer(req, res) {
-    Team.findById(req.params.id, function(err, team){
-        res.render('players/new', { 
-            title: 'Add Player', 
+    Team.findById(req.params.id, function (err, team) {
+        res.render('players/new', {
+            title: 'Add Player',
             user: req.user,
             team
         });
@@ -41,7 +41,7 @@ function create(req, res) {
         var player = new Player(req.body);
         player.save(function (err) {
             team.players.push(player._id);
-            team.save(function(err){
+            team.save(function (err) {
                 console.log(team)
                 res.redirect(`/teams/${team._id}`)
             })

@@ -1,25 +1,39 @@
 <%- include('../partials/header') %>
 
-<div class="container valign-wrapper">
-<div>Team: </div>
-<div><%= team.name %></div>
-
-<div>Bye Week: </div>
-<div><%= team.byeWeek%></div>
+<div class="container valign-wrapper left">
+    
+    <h6>Bye Week:</h6>
+    <h6><%= team.byeWeek%></h6>
 </div>
 <br>
 <br>
-<br>
-<br>
-<br>
-<div>
-<div>Players: </div>
-<div><%= team.players%></div>
-</div>
 
+<div class="container left players"><strong>Players:</strong></div>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>ADP</th>
+            <th>More Info</th>
+            <th>Delete Player</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% team.players.forEach(p => { %>
+        <tr>
+            <td><%= p.name %></td>
+            <td><%= p.position %></td>
+            <td><%= p.adp %></td>
+            <td><a href="/playerss/<%=p._id %>">DETAILS</a></td>
+            <td><form action="/players/<%=p._id%>?_method=DELETE" method="POST"><button>X</button></form></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
 <div>
     <form action="/teams/<%= team._id %>/players/new">
-    <input type="submit" value="Add Player">
-</form>
+        <input type="submit" value="Add Player">
+    </form>
 </div>
 <%- include('../partials/footer') %>
