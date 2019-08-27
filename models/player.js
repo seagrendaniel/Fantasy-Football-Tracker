@@ -6,8 +6,8 @@ var PlayerSchema = new mongoose.Schema({
         required: true
     },
     team: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Team'
     },
     position: {
         type: String,

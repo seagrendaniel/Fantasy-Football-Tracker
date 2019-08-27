@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+<div>
+  </div>
+  <table class="striped">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Position</th>
+          <th>Team</th>
+          <th>More Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% players.forEach(function(m) { %>
+          <tr>
+            <td><%= m.name %></td>
+            <td><%= m.position %></td>
+            <td><%= m.team %></td>
+            <td><a href="/players/<%=m._id %>">DETAILS</a></td>
+            <td><form action="/playerss/<%=m._id%>?_method=DELETE" method="POST"><button>X</button></form></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <!-- <input type="submit" value="Select Team"> -->
+  <form action="/players/new">
+  <input type="submit" value="Add Player">
+  </form>
+
+
+
+
+<%- include('../partials/footer') %> 

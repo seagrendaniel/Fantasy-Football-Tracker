@@ -8,9 +8,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/players', playerCtrl.index);
-router.get('/players/new', playerCtrl.new);
+router.get('/teams/:id/players/new', playerCtrl.new);
 router.get('/players/:id', playerCtrl.show);
-router.post('/', playerCtrl.create);
+router.post('/teams/:id', playerCtrl.create);
 
 
 module.exports = router;

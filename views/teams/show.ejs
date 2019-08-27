@@ -1,17 +1,25 @@
 <%- include('../partials/header') %>
 
+<div class="container valign-wrapper">
 <div>Team: </div>
 <div><%= team.name %></div>
 
 <div>Bye Week: </div>
 <div><%= team.byeWeek%></div>
-
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
 <div>Players: </div>
 <div><%= team.players%></div>
+</div>
 
-
-<form action="/players/new">
+<div>
+    <form action="/teams/<%= team._id %>/players/new">
     <input type="submit" value="Add Player">
 </form>
-
+</div>
 <%- include('../partials/footer') %>

@@ -1,4 +1,5 @@
 const Team = require('../models/team')
+const Player = require('../models/player')
 
 module.exports = {
     index,
@@ -23,12 +24,13 @@ function newTeam(req, res){
 }
 
 function show(req, res){
-    Team.findById(req.params.id, function(err, team){
+    Team.findById(req.params.id).populate('Player').exec(function(err, team){
         console.log(team);
         res.render('teams/show', {
             user: req.user,
             title: team.name,
             team
+
         });
     })
 }

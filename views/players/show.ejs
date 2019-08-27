@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<div>Name: </div>
+<div><%= player.name %></div>
+
+<div>Position: </div>
+<div><%= player.position%></div>
+
+<div>ADP: </div>
+<div><%= player.adp%></div>
+
+
+<form action="/teams/:id/players/new">
+    <input type="submit" value="Add Player">
+</form>
+
+<%- include('../partials/footer') %>
