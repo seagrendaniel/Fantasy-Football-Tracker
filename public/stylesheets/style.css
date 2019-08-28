@@ -20,22 +20,23 @@ select {
 
 
 
-.logo {
+#nav-logo {
   justify-self: left;
+  position: inherit;
 }
 
 .football {
   margin-right: 100px;
   justify-self: right;
-  height: 100px;
+  height: 64px;
   
 }
 
 .nav-wrapper {
   width: 100%;
+  color: #303B37;
 }
 
 .players {
-  font-size: 50px;
-  background-color: blueviolet;
+  font-size: 30px;
 }
