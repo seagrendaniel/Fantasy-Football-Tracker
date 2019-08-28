@@ -38,5 +38,23 @@ select {
 }
 
 .players {
-  font-size: 30px;
+  font-size: 22px;
 }
+
+.team-info {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+}
+
+.team-name {
+  margin: 0 auto;
+}
+
+.bye-week {
+  margin-left: 50px;
+  font-weight: bolder;
+  justify-self: left;
+  text-align: bottom;
+}
+

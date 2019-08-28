@@ -34,11 +34,14 @@ function newPlayer(req, res) {
 }
 
 function show(req, res) {
-    Player.findById(req.params.id, function (err, player) {
-        res.render(`players/show`, {
-            title: player.name,
-            user: req.user,
-            player,
+    Team.findById(req.params.id, function(err, team){
+        Player.findById(req.params.id, function (err, player) {
+            res.render(`players/show`, {
+                title: player.name,
+                user: req.user,
+                player,
+                team,
+            })
         })
     })
 }

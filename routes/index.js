@@ -5,17 +5,21 @@ var passport = require('passport');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // console.log('hitting')
-  res.redirect('/teams', { 
-    title: '2019 Fantasy Football Depth and Stat Tracker',
-    user: req.user
-  });
+  res.redirect('/teams' 
+  // { 
+    // title: '2019 Fantasy Football Depth and Stat Tracker',
+    // user: req.user
+  // }
+  );
 });
 
 router.get('/test', function(req, res) {
-  res.redirect('/teams', { 
-    title: '2019 Fantasy Football Depth and Stat Tracker',
-    user: req.user
-  });
+  res.redirect('/teams' 
+  // { 
+    // title: '2019 Fantasy Football Depth and Stat Tracker',
+    // user: req.user
+  // }
+  );
 })
 
 // Google OAuth login route

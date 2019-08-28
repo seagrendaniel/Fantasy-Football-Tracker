@@ -1,14 +1,16 @@
 <%- include('../partials/header') %>
 
-<div class="container valign-wrapper left">
-    
-    <h6>Bye Week:</h6>
-    <h6><%= team.byeWeek%></h6>
+<div class="valign-wrapper left team-info">
+    <div class="team-name">
+        <h5><%= title %></h5>
+    </div>
+    <div class="bye-week">
+        <h6>Bye Week: <%= team.byeWeek%></h6>
+    </div>
 </div>
 <br>
 <br>
 
-<div class="container left players"><strong>Players:</strong></div>
 <table class="striped highlight">
     <thead>
         <tr>
@@ -26,7 +28,9 @@
             <td><%= p.position %></td>
             <td><%= p.adp %></td>
             <td><a href="/players/<%=p._id %>">DETAILS</a></td>
-            <td><form action="/players/<%=p._id%>?_method=DELETE" method="POST"><button>X</button></form></td>
+            <td>
+                <form action="/players/<%=p._id%>?_method=DELETE" method="POST"><button>X</button></form>
+            </td>
         </tr>
         <% }) %>
     </tbody>
