@@ -13,10 +13,22 @@ select {
   display: flex;
 }
 
-football-header {
-  display: inline-block;
-  height: 50px;
-  width: 100px;
+.logo-head {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.logo {
+  justify-self: left;
+}
+
+.football {
+  margin-right: 100px;
+  justify-self: right;
+  height: 100px;
+  
 }
 
 .nav-wrapper {

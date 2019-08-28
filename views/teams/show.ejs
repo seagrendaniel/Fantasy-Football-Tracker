@@ -9,7 +9,7 @@
 <br>
 
 <div class="container left players"><strong>Players:</strong></div>
-<table>
+<table class="striped highlight">
     <thead>
         <tr>
             <th>Name</th>
@@ -25,7 +25,7 @@
             <td><%= p.name %></td>
             <td><%= p.position %></td>
             <td><%= p.adp %></td>
-            <td><a href="/playerss/<%=p._id %>">DETAILS</a></td>
+            <td><a href="/players/<%=p._id %>">DETAILS</a></td>
             <td><form action="/players/<%=p._id%>?_method=DELETE" method="POST"><button>X</button></form></td>
         </tr>
         <% }) %>

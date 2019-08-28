@@ -1,0 +1,58 @@
+<%- include('../partials/header') %>
+<div class="container left">
+    <form action="/players/<%= player._id %>?_method=PUT" method="POST">
+        <div class="container">
+            <br>
+            <br>
+            <label class="left">Name:
+                <input type="text" name="name" value="<%=player.name %>">
+            </label><br>
+            <select class="browser-default" name="position" selected="<%=player.position %>">Position:
+                    
+
+                            <%
+                            var options = [ "RB1", "RB2", "RB3", "WR1", "WR1", "WR2", "WR3", "TE1", "TE2" ];
+                            for ( var i = 0; i < options.length; i++ )
+                            {
+                                var selected = ( player.position == options[i] ) ? "selected" : "";
+                                %><option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option><%
+                            }
+                            %>
+                            
+                <!-- <option value="RB1">RB1</option>
+                <option value="RB2">RB2</option>
+                <option value="RB3">RB3</option>
+                <option value="WR1">WR1</option>
+                <option value="WR2">WR2</option>
+                <option value="WR3">WR3</option>
+                <option value="TE1">TE1</option>
+                <option value="TE2">TE2</option> -->
+            </select><br>
+        </div>
+        <div class="container">
+            <label>Rush Yds/Game:
+                <input type="text" name="rushYdsPG" value="<%=player.rushYdsPG %>">
+            </label><br>
+            <label>Rush Attempts/Game:
+                <input type="text" name="rushAttPG" value="<%=player.rushAttPG %>">
+            </label><br>
+            <label>Rushing TDs:
+                <input type="text" name="rushTD" value="<%=player.rushTD %>">
+            </label><br>
+            <label>Reception Yards/Game:
+                <input type="text" name="recYdsPG" value="<%=player.recYdsPG %>">
+            </label><br>
+            <label>Targets/Game:
+                <input type="text" name="recTargets" value="<%=player.recTargets %>">
+            </label><br>
+            <label>Reception TDs:
+                <input type="text" name="recTD" value="<%=player.recTD %>">
+            </label><br>
+            <label>Average Draft Position:
+                <input type="text" name="adp" value="<%=player.adp %>">
+            </label><br>
+            <input type="submit" value="Update">
+        </div> 
+    </form>
+</div>
+<%- include('../partials/footer') %>

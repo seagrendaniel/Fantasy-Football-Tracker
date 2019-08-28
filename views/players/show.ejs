@@ -1,17 +1,61 @@
 <%- include('../partials/header') %>
 
-<div>Name: </div>
-<div><%= player.name %></div>
+<!-- <div>Name: </div> -->
+<table class="centered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>ADP</th>
+            <% if(player.rushYdsPG) { %>
+            <th>Rush Yards/Game</th>
+            <% }; %>
+            <% if(player.rushAttPG) { %>
+            <th>Rush Att/Game</th>
+            <% }; %>
+            <% if(player.rushTD) { %>
+            <th>Rush TDs</th>
+            <% }; %>
+            <% if(player.recYdsPG) { %>
+            <th>Rec Yards/Game</th>
+            <% }; %>
+            <% if(player.recTargets) { %>
+            <th>Targets/Game</th>
+            <% }; %>
+            <% if(player.recTD) { %>
+            <th>Rec TDs</th>
+            <% }; %>
+            <th>Edit Stats</th>
+        </tr>
+    </thead>
+    <tbody>
 
-<div>Position: </div>
-<div><%= player.position%></div>
-
-<div>ADP: </div>
-<div><%= player.adp%></div>
-
-
-<form action="/teams/:id/players/new">
-    <input type="submit" value="Add Player">
-</form>
+        <tr>
+            <td><%= player.name %></td>
+            <td><%= player.position %></td>
+            <td><%= player.adp %></td>
+            <% if(player.rushYdsPG) { %>
+            <td> <%= player.rushYdsPG %> </td>
+            <% }; %>
+            <% if(player.rushAttPG) { %>
+            <td> <%= player.rushAttPG %> </td>
+            <% }; %>
+            <% if(player.rushTD) { %>
+            <td> <%= player.rushTD %> </td>
+            <% }; %>
+            <% if(player.recYdsPG) { %>
+            <td> <%= player.recYdsPG %> </td>
+            <% }; %>
+            <% if(player.recTargets) { %>
+            <td> <%= player.recTargets %> </td>
+            <% }; %>
+            <% if(player.recTD) { %>
+            <td> <%= player.recTD %> </td>
+            <% }; %>
+            <td> <a href="/players/<%=player._id%>/edit">EDIT</a> </td>
+        </tr>
+        
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %>

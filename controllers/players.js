@@ -1,6 +1,15 @@
 const Player = require('../models/player');
 const Team = require('../models/team');
 
+module.exports = {
+    index,
+    new: newPlayer,
+    show,
+    create,
+    delete: deletePlayer,
+    edit,
+    update
+}
 
 
 function index(req, res) {
@@ -26,11 +35,10 @@ function newPlayer(req, res) {
 
 function show(req, res) {
     Player.findById(req.params.id, function (err, player) {
-        res.render('player/:id', {
-            Title: player.name,
+        res.render(`players/show`, {
+            title: player.name,
             user: req.user,
             player,
-            // team: player.team
         })
     })
 }
@@ -49,27 +57,27 @@ function create(req, res) {
     })
 }
 
-// const create = async(req,res) => {
-//     try {
-//         const findTeam = await Team.findById(req.params.id);
-//         console.log(req.params.id,'<<<<id<<<<<')
-//         console.log(findTeam.name, "<<<<<<<<<<<team<<<<<<<<<<<<");
-//         const player = await new Player(req.body);
-//         console.log(player, '<<<<<<<player<<<<<<<');
-//         findTeam.players.push(player);
-//         console.log(findTeam.players, "<<<<<<<<<<<<<<<<<<<<<<<");
-//         findTeam.save();
-//         Player.save(player);
-//         res.redirect(`/teams/${req.params.id}`);
-//     }
-//     catch (err) {
-//         res.send('hello');
-//     }
-// }
-
-module.exports = {
-    index,
-    new: newPlayer,
-    show,
-    create
+function deletePlayer(req, res) {
+    Player.findByIdAndRemove(req.params.pid, function(err, p){
+        res.redirect(`back`);
+    })
 }
+
+function edit(req, res) {
+    Player.findById(req.params.id, function(err, player){
+        res.render('players/edit', {
+            title: player.name,
+            user: req.user,
+            player
+        })
+    })
+}
+
+function update(req, res) {
+    Player.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, player){
+        res.redirect(`/players/${req.params.id}`);
+    })
+}
+
+
+
