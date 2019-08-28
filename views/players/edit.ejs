@@ -8,8 +8,6 @@
                 <input type="text" name="name" value="<%=player.name %>">
             </label><br>
             <select class="browser-default" name="position" selected="<%=player.position %>">Position:
-                    
-
                             <%
                             var options = [ "RB1", "RB2", "RB3", "WR1", "WR1", "WR2", "WR3", "TE1", "TE2" ];
                             for ( var i = 0; i < options.length; i++ )
@@ -17,16 +15,7 @@
                                 var selected = ( player.position == options[i] ) ? "selected" : "";
                                 %><option value="<%=options[ i ] %>" <%=selected %>><%=options[i] %></option><%
                             }
-                            %>
-                            
-                <!-- <option value="RB1">RB1</option>
-                <option value="RB2">RB2</option>
-                <option value="RB3">RB3</option>
-                <option value="WR1">WR1</option>
-                <option value="WR2">WR2</option>
-                <option value="WR3">WR3</option>
-                <option value="TE1">TE1</option>
-                <option value="TE2">TE2</option> -->
+                            %> 
             </select><br>
         </div>
         <div class="container">
