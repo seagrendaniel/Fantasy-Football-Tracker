@@ -1,7 +1,9 @@
 var router = require('express').Router();
 var usersCtrl = require('../controllers/users');
 
-router.get('/index', usersCtrl.index);
+router.get('/users/:id/show', usersCtrl.index);
+router.get('/users/:id/show', usersCtrl.show);
+// router.post()
 
 
 function isLoggedIn(req, res, next){

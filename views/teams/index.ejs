@@ -15,15 +15,15 @@
           <tr>
             <td><%= m.name %></td>
             <td><%= m.byeWeek %></td>
-            <td><a href="/teams/<%=m._id %>">DETAILS</a></td>
-            <td><form action="/teams/<%=m._id%>?_method=DELETE" method="POST"><button>X</button></form></td>
+            <td><a href="/teams/<%=m._id %>"><img src="https://i.imgur.com/HXU68sm.png" alt="small-football" class="details-football"></a></td>
+            <td><form action="/teams/<%=m._id%>?_method=DELETE" method="POST"><button class="del-button hoverable">X</button></form></td>
           </tr>
         <% }); %>
       </tbody>
     </table>
   <!-- <input type="submit" value="Select Team"> -->
   <form action="/teams/new">
-  <input type="submit" value="Add Team">
+  <input type="submit" value="Add Team" class="sel-button">
   </form>
 
 

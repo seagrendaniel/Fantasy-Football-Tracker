@@ -26,8 +26,8 @@ select {
 }
 
 .football {
-  margin-right: 100px;
-  justify-self: right;
+  margin-left: 25px;
+  /* justify-self: right; */
   height: 64px;
   
 }
@@ -57,4 +57,43 @@ select {
   justify-self: left;
   text-align: bottom;
 }
+
+.del-button {
+  background-color: red;
+  border-radius: 25%;
+  font-weight: 900;
+  color: white;
+  margin-left: 30px;
+}
+
+.sel-button {
+  margin-top: 20px;
+  background-color: lightskyblue;
+  border-radius: 5px;
+}
+
+.sel-button:hover {
+  background-color: #00B7FF;
+}
+
+.add-button{ 
+  background-color: lightskyblue;
+  border-radius: 5px;
+}
+
+.add-button:hover{
+  background-color: #00B7FF;
+}
+
+.details-football {
+  height: 30px;
+  width: 30x;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+
+.details-football:hover {
+  opacity: 0.7;
+}
+
 

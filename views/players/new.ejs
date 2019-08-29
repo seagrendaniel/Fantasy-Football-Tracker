@@ -2,11 +2,10 @@
 <div class="container left">
     <form action="/teams/<%= team._id %>" method="POST">
         <div class="container">
-            <br>
-            <br>
+            
             <label class="left">Name:
                 <input type="text" name="name">
-            </label><br>
+            </label>
             <select class="browser-default" name="position">Position:
                 <option value="RB1">RB1</option>
                 <option value="RB2">RB2</option>
@@ -16,31 +15,31 @@
                 <option value="WR3">WR3</option>
                 <option value="TE1">TE1</option>
                 <option value="TE2">TE2</option>
-            </select><br>
+            </select>
         </div>
         <div class="container">
             <label>Rush Yds/Game:
                 <input type="text" name="rushYdsPG">
-            </label><br>
+            </label>
             <label>Rush Attempts/Game:
                 <input type="text" name="rushAttPG">
-            </label><br>
+            </label>
             <label>Rushing TDs:
                 <input type="text" name="rushTD">
-            </label><br>
+            </label>
             <label>Reception Yards/Game:
                 <input type="text" name="recYdsPG">
-            </label><br>
+            </label>
             <label>Targets/Game:
                 <input type="text" name="recTargets">
-            </label><br>
+            </label>
             <label>Reception TDs:
                 <input type="text" name="recTD">
-            </label><br>
+            </label>
             <label>Average Draft Position:
                 <input type="text" name="adp">
-            </label><br>
-            <input type="submit" value="Add Player">
+            </label>
+            <input type="submit" value="Add Player" class="add-button">
         </div> 
     </form>
 </div>
