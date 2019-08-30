@@ -2,7 +2,7 @@
 
 ###Overview
 
-This app enables the user to track NFL team depth charts and stats in the 2019 season to use as a reference for their fantasy football draft(s). It shows per game stats that I believe are some of the most valuable when tracking and ranking players for fantasy drafts.
+This [app](https://fantasy-football-stat-tracker.herokuapp.com) enables the user to track NFL team depth charts and stats in the 2019 season to use as a reference for their fantasy football draft(s). It shows per game stats that I believe are some of the most valuable when tracking and ranking players for fantasy drafts.
 
 <img src="https://i.imgur.com/y5bST0P.png">
 
