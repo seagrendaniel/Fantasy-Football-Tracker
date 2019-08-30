@@ -11,7 +11,12 @@ This [app](https://fantasy-football-stat-tracker.herokuapp.com) enables the user
 <img src="https://i.imgur.com/dj0OGNE.png">
 ---
 ###Technologies Used
-This application was made with HTML5, Materialize CSS, MongoDb, and Node.js
+- Node.js
+- MongoDb / Atlas
+- Mongoose
+- GoogleOAuth
+- Materialize CSS
+- HTML5
 
 ###Wireframes
 <img src="https://i.imgur.com/jCB9D88.png">
